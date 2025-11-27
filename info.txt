@@ -1,5 +1,5 @@
 # Команда для выполнения
-ansible -i hosts.ini -m setup -a "filter=default_ipv4,os_family,distribution_version,machine,env" demo
+ansible -i hosts.ini -m setup -a "filter=default_ipv4,os_family,distribution_version,ansible_fqdn,env" demo
 
 # Результат выполнения
 10.77.2.150 | SUCCESS => {
@@ -27,18 +27,18 @@ ansible -i hosts.ini -m setup -a "filter=default_ipv4,os_family,distribution_ver
             "PWD": "/home/deploy",
             "SHELL": "/bin/bash",
             "SHLVL": "0",
-            "SSH_CLIENT": "10.0.177.254 24030 22",
-            "SSH_CONNECTION": "10.0.177.254 24030 10.77.2.150 22",
+            "SSH_CLIENT": "10.0.177.254 46260 22",
+            "SSH_CONNECTION": "10.0.177.254 46260 10.77.2.150 22",
             "SSH_TTY": "/dev/pts/1",
             "TERM": "linux",
             "USER": "deploy",
             "XDG_RUNTIME_DIR": "/run/user/1001",
             "XDG_SESSION_CLASS": "user",
-            "XDG_SESSION_ID": "10218",
+            "XDG_SESSION_ID": "10226",
             "XDG_SESSION_TYPE": "tty",
             "_": "/bin/sh"
         },
-        "ansible_machine": "x86_64",
+        "ansible_fqdn": "msk1-s-docker01.tool-rus.local",
         "ansible_os_family": "Debian",
         "discovered_interpreter_python": "/usr/bin/python3.12"
     },
