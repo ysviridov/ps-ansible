@@ -1,0 +1,46 @@
+# Команда для выполнения
+ansible -i hosts.ini -m setup -a "filter=default_ipv4,os_family,distribution_version,machine,env" demo
+
+# Результат выполнения
+10.77.2.150 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_default_ipv4": {
+            "address": "10.77.2.150",
+            "alias": "ens192",
+            "broadcast": "10.77.2.255",
+            "gateway": "10.77.2.1",
+            "interface": "ens192",
+            "macaddress": "00:50:56:87:23:3f",
+            "mtu": 1500,
+            "netmask": "255.255.255.0",
+            "network": "10.77.2.0",
+            "prefix": "24",
+            "type": "ether"
+        },
+        "ansible_distribution_version": "24.04",
+        "ansible_env": {
+            "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1001/bus",
+            "HOME": "/home/deploy",
+            "LANG": "en_US.UTF-8",
+            "LOGNAME": "deploy",
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin",
+            "PWD": "/home/deploy",
+            "SHELL": "/bin/bash",
+            "SHLVL": "0",
+            "SSH_CLIENT": "10.0.177.254 24030 22",
+            "SSH_CONNECTION": "10.0.177.254 24030 10.77.2.150 22",
+            "SSH_TTY": "/dev/pts/1",
+            "TERM": "linux",
+            "USER": "deploy",
+            "XDG_RUNTIME_DIR": "/run/user/1001",
+            "XDG_SESSION_CLASS": "user",
+            "XDG_SESSION_ID": "10218",
+            "XDG_SESSION_TYPE": "tty",
+            "_": "/bin/sh"
+        },
+        "ansible_machine": "x86_64",
+        "ansible_os_family": "Debian",
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false
+}
